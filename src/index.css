@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --gold-primary: #d4af37;
+    --gold-light: #fef08a;
+    --gold-dark: #854d0e;
+    --surface-dark: #0a0a0c;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #060608;
+    color: #f1f5f9;
+    direction: rtl;
+    text-align: right;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Quran font class */
+  .font-quran {
+    font-family: 'Amiri Quran', 'Amiri', 'Scheherazade New', serif;
+    line-height: 2.2;
+  }
+
+  .font-display {
+    font-family: 'Cinzel', serif;
+  }
+}
+
+/* Glassmorphism utility classes */
+.glass-gold {
+  background: rgba(18, 16, 14, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(254, 240, 138, 0.12);
+}
+
+.glass-gold-subtle {
+  background: rgba(14, 13, 15, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+.glass-gold-active {
+  background: rgba(30, 24, 16, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25), inset 0 1px 1px rgba(254, 240, 138, 0.3);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fff2a8 0%, #d4af37 50%, #aa771c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #d4af37 0%, #aa771c 100%);
+}
+
+.gold-border-glow {
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+}
+
+/* Custom golden scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(10, 10, 12, 0.7);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.35);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.65);
+}
+
+/* Audio wave animation */
+@keyframes waveBounce {
+  0%, 100% {
+    transform: scaleY(0.2);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.animate-wave-1 {
+  animation: waveBounce 1.1s ease-in-out infinite alternate;
+}
+.animate-wave-2 {
+  animation: waveBounce 0.9s ease-in-out infinite 0.2s alternate;
+}
+.animate-wave-3 {
+  animation: waveBounce 1.3s ease-in-out infinite 0.4s alternate;
+}
+.animate-wave-4 {
+  animation: waveBounce 0.8s ease-in-out infinite 0.1s alternate;
+}
+.animate-wave-5 {
+  animation: waveBounce 1.2s ease-in-out infinite 0.3s alternate;
+}
+
+/* Subtle glow pulse */
+@keyframes goldPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.45);
+  }
+}
+.pulse-gold {
+  animation: goldPulse 3s ease-in-out infinite;
+}
